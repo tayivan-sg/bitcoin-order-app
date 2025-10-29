@@ -27,7 +27,7 @@ jobs:
 
       - name: Run scan with ODC
         run: |
-          dependency-check/bin/dependency-check.sh --project "bitcoin" --nvdApiKey ${{ secrets.WORKSHOP6_NVD_API_KEY }} --out . --scan .
+          dependency-check/bin/dependency-check.sh --project "bitcoin" --nvdApiKey ${{ secrets.WORKSHOP6_NVD_API_KEY }} --nvdApiDelay 10000 --out . --scan .
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
